@@ -23,8 +23,8 @@ describe('Experience section', () => {
     const container = await AstroContainer.create();
     const html = await container.renderToString(Experience);
 
-    expect(html).toContain('href="https://www.eneco.nl/en/about-us/"');
-    expect(html).toContain('Aug 2024 – present');
-    expect(html).toContain('Tech Lead / Senior .NET Software Engineer');
+    expect(html).toContain('href="https://www.sectoralarm.com/"');
+    expect(html).toContain('May 2026 – present');
+    expect(html).toContain('Aug 2024 – Apr 2026');
   });
 });

@@ -59,6 +59,7 @@ describe('experience', () => {
 
   it('covers the whole employment history from the CV', () => {
     expect(experience.map((job) => job.company)).toEqual([
+      'Sector Alarm',
       'Eneco',
       'Ayvens',
       'CarNext',
@@ -67,6 +68,18 @@ describe('experience', () => {
       'DGS BS Sp. z o.o.',
       'Rothausen Development',
     ]);
+  });
+
+  it('marks the current role correctly', () => {
+    const current = experience[0];
+    expect(current.company).toBe('Sector Alarm');
+    expect(current.start).toBe('2026-05');
+    expect(current.end).toBeUndefined();
+    // Every other role has closed, and closed after it started.
+    for (const job of experience.slice(1)) {
+      expect(job.end).toBeTruthy();
+      expect(job.end! < current.start).toBe(true);
+    }
   });
 });
 

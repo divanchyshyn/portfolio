@@ -61,19 +61,36 @@ export const profile: Profile = {
   github: 'https://github.com/divanchyshyn',
   careerStart: '2013-11',
   description:
-    'Dmytro Ivanchyshyn — Senior .NET Software Engineer / Tech Lead in Oslo, Norway. 13 years of experience across .NET, Azure, AWS and event-driven architecture.',
+    'Dmytro Ivanchyshyn — Senior .NET Software Engineer / Tech Lead in Oslo, Norway. 13 years across .NET, Azure, Kubernetes and event-driven architecture, now building cloud platforms for smart-home security.',
   summary:
-    'I am a .NET Tech Lead with 13 years of experience building and leading backend platforms — from event-driven microservices in finance and energy trading to content management and desktop engineering. I care about clear service boundaries, event-driven architecture and honest code reviews, and I raise the bar through testing strategies, observability and coaching rather than heroics. Currently I lead the Flex Optimization Team at Eneco in Oslo, working on flex trading and portfolio optimisation for a Virtual Power Plant.',
+    'I am a .NET engineer with 13 years behind cloud-native platforms — from event-driven microservices in finance and energy trading to smart-home security at European scale. I care about clear service boundaries, event-driven architecture and teams that ship with confidence: strong testing strategies, real observability and honest code reviews. Currently at Sector Alarm in Oslo, building cloud services on a fully Azure stack with Kubernetes — and weaving agentic AI into the everyday engineering loop with Claude Code and LLM-assisted workflows. Before that I led the Flex Optimization Team at Eneco in Rotterdam, delivering the optimisation services behind a Virtual Power Plant.',
 };
 
 export const experience: Experience[] = [
+  {
+    company: 'Sector Alarm',
+    companyUrl: 'https://www.sectoralarm.com/',
+    role: 'Senior .NET Software Engineer',
+    start: '2026-05',
+    summary:
+      'Building cloud-native backend services for one of Europe\u2019s leading safety providers — Sector Alarm protects more than 730,000 homes and businesses across Europe with smart alarms, cameras and locks, backed by a 24/7 Alarm Receiving Centre.',
+    highlights: [
+      'Building cloud-native .NET services on a fully Azure stack, deployed on Azure Kubernetes Service.',
+      'Bringing agentic AI into everyday engineering — Claude Code\u2013assisted development, AI pipelines and modern tooling woven into how the team ships.',
+      'Working on the platform that connects security devices, the award-winning Sector Alarm app and the 24/7 Alarm Receiving Centre.',
+    ],
+    tech: [
+      'C#', '.NET', 'Azure', 'Kubernetes', 'AKS', 'Docker', 'Claude Code', 'Agentic AI workflows',
+    ],
+  },
   {
     company: 'Eneco',
     companyUrl: 'https://www.eneco.nl/en/about-us/',
     role: 'Senior .NET Software Engineer',
     start: '2024-08',
+    end: '2026-04',
     summary:
-      'Lead development for the Flex Optimization Team within the Asset Optimization domain, delivering backend services and integrations that support flex trading and portfolio optimisation for the Virtual Power Plant (VPP).',
+      'Led development for the Flex Optimization Team within the Asset Optimization domain in Rotterdam, delivering backend services and integrations that support flex trading and portfolio optimisation for the Virtual Power Plant (VPP).',
     highlights: [
       'Defined service boundaries, multi-tenant data architecture and integration patterns; authored Architecture Decision Records and aligned choices with other VPP domains.',
       'Designed multi-tenancy with isolated data stores, enabling tenant isolation, simpler compliance and independent scaling of tenant workloads.',
@@ -188,7 +205,11 @@ export const experience: Experience[] = [
 export const skills: SkillGroup[] = [
   {
     title: 'Languages & runtime',
-    items: ['C#', '.NET 8/10', 'ASP.NET Core', 'MSSQL', 'PostgreSQL', 'Entity Framework', 'Docker', 'Git'],
+    items: ['C#', '.NET 8/10', 'ASP.NET Core', 'MSSQL', 'PostgreSQL', 'Entity Framework', 'Git'],
+  },
+  {
+    title: 'Cloud-native & AI',
+    items: ['Kubernetes', 'AKS', 'Docker', 'Claude Code', 'Agentic AI pipelines', 'AI-assisted development'],
   },
   {
     title: 'Messaging & streaming',
@@ -196,7 +217,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: 'Azure',
-    items: ['Cosmos DB for NoSQL', 'Blob Storage', 'App Configuration', 'Application Insights'],
+    items: ['AKS', 'Cosmos DB for NoSQL', 'Blob Storage', 'App Configuration', 'Application Insights'],
   },
   {
     title: 'AWS',

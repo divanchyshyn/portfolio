@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import { profile, yearsOfExperience } from '../data/cv';
+import { profile } from '../data/cv';
 import profilePic from '../assets/profile.jpg';
 ---
 
@@ -11,22 +11,23 @@ import profilePic from '../assets/profile.jpg';
       <h1>{profile.name}</h1>
       <p class="hero-role">{profile.role}</p>
       <p class="hero-lede">
-        {yearsOfExperience()} years of building and leading backend platforms —
-        event-driven microservices, .NET architecture and the teams behind them.
+        13 years of building cloud-native backend platforms — event-driven .NET,
+        Azure and Kubernetes, with agentic AI woven into how the work gets done.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <a class="btn btn-ghost" href={profile.linkedin}>LinkedIn profile</a>
       </div>
     </div>
-    <Picture
-      src={profilePic}
-      alt="Dmytro Ivanchyshyn hiking in the mountains"
-      formats={['avif', 'webp']}
-      widths={[360, 540, 720]}
-      sizes="(max-width: 899px) 90vw, 420px"
-      class="hero-photo"
-    />
+    <div class="hero-photo-frame">
+      <Picture
+        src={profilePic}
+        alt="Dmytro Ivanchyshyn hiking in the mountains"
+        formats={['avif', 'webp']}
+        widths={[360, 540, 720]}
+        sizes="(max-width: 899px) 90vw, 420px"
+      />
+    </div>
   </div>
 </section>
 
@@ -73,18 +74,20 @@ import profilePic from '../assets/profile.jpg';
     gap: 0.75rem;
   }
 
-  .hero-photo {
+  .hero-photo-frame {
+    display: grid;
     justify-self: center;
     width: min(100%, 420px);
     border-radius: var(--radius);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
+    overflow: hidden;
+    background: var(--surface);
   }
 
-  .hero-photo :global(img) {
+  .hero-photo-frame :global(img) {
     width: 100%;
     height: auto;
-    border-radius: var(--radius);
   }
 
   @media (max-width: 899px) {
@@ -96,7 +99,7 @@ import profilePic from '../assets/profile.jpg';
       order: 1;
     }
 
-    .hero-photo {
+    .hero-photo-frame {
       order: 0;
       width: min(100%, 320px);
     }
