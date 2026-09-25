@@ -1,0 +1,99 @@
+---
+import { education, spokenLanguages } from '../data/cv';
+---
+
+<section class="section" id="education">
+  <div class="container">
+    <h2 class="section-title">Education &amp; languages</h2>
+    <div class="columns">
+      <div class="column">
+        <h3>Education</h3>
+        <ul class="education-list">
+          {education.map((entry) => (
+            <li>
+              <p class="period">{entry.period}</p>
+              <p class="school">{entry.school}</p>
+              <p class="degree">{entry.degree}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Languages</h3>
+        <ul class="language-list">
+          {spokenLanguages.map((language) => (
+            <li>
+              <span class="language-name">{language.name}</span>
+              <span class="level">{language.level}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+
+  .column {
+    padding: 1.35rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .education-list,
+  .language-list {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .period {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .school {
+    font-weight: 600;
+  }
+
+  .degree {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  .language-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.7rem;
+  }
+
+  .language-list li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .language-name {
+    font-weight: 600;
+  }
+
+  .level {
+    color: var(--text-muted);
+  }
+</style>

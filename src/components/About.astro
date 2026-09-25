@@ -1,0 +1,29 @@
+---
+import { profile, spokenLanguages, yearsOfExperience } from '../data/cv';
+
+const languagesLine = spokenLanguages.map((language) => `${language.name} (${language.level})`).join(', ');
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <p class="section-intro">
+      {profile.role} in {profile.location} · {yearsOfExperience()} years of experience
+    </p>
+    <div class="about-body">
+      <p>{profile.summary}</p>
+      <p>
+        Beyond work, I speak {languagesLine}, and you will find me in the Norwegian
+        mountains when the weather allows it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-body {
+    display: grid;
+    gap: 1rem;
+    max-width: 75ch;
+  }
+</style>

@@ -1,0 +1,153 @@
+---
+import { experience, formatPeriod } from '../data/cv';
+---
+
+<section class="section" id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-intro">
+      Thirteen years of shipping backend platforms — the recent years leading architecture, quality and people.
+    </p>
+    <ol class="timeline">
+      {experience.map((job) => (
+        <li class="entry">
+          <div class="entry-head">
+            <h3>
+              {job.companyUrl ? (
+                <a href={job.companyUrl}>{job.company}</a>
+              ) : (
+                job.company
+              )}
+            </h3>
+            <p class="entry-period">{formatPeriod(job.start, job.end)}</p>
+          </div>
+          <p class="entry-role">{job.role}</p>
+          <p class="entry-summary">{job.summary}</p>
+          <ul class="entry-highlights">
+            {job.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+          <ul class="entry-tech" aria-label="Technologies used at this role">
+            {job.tech.map((item) => (
+              <li class="chip">{item}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    display: grid;
+    gap: 2.25rem;
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    list-style: none;
+  }
+
+  /* The vertical line the entries hang from. */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: var(--border);
+    border-radius: 999px;
+  }
+
+  .entry {
+    position: relative;
+  }
+
+  /* Timeline dot for each entry. */
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    margin-left: -5px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  h3 a {
+    color: var(--text);
+  }
+
+  h3 a:hover {
+    color: var(--accent);
+  }
+
+  .entry-period {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .entry-role {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-top: 0.15rem;
+  }
+
+  .entry-summary {
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    max-width: 75ch;
+  }
+
+  .entry-highlights {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .entry-highlights li {
+    position: relative;
+    padding-left: 1.1rem;
+    max-width: 78ch;
+  }
+
+  .entry-highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .entry-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

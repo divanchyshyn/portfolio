@@ -1,0 +1,22 @@
+// Cloudflare Workers configuration. The site is pure static assets, so there
+// is no Worker script here: Cloudflare serves `dist/` itself. The default
+// `html_handling` ("auto-trailing-slash") keeps URLs working the standard way.
+// `not_found_handling: "404-page"` serves the generated 404.html for unknown
+// paths instead of Cloudflare's own error page.
+//
+// The first deploy from `.github/workflows/deploy-cloudflare.yml` creates the
+// Worker under this name, so it must match the Worker in the Cloudflare
+// dashboard. `compatibility_date` marks the Workers runtime version and can be
+// bumped deliberately; it does not affect the static assets.
+//
+// The custom domain (divanchyshyn.com) is deliberately absent: it is attached
+// once in the Cloudflare dashboard, which keeps account and domain details out
+// of the repository.
+{
+  "name": "portfolio",
+  "compatibility_date": "2026-09-20",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
