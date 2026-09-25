@@ -1,0 +1,55 @@
+---
+import { profile } from '../data/cv';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-intro">
+      The fastest way to reach me is LinkedIn — I am happy to talk about .NET
+      architecture, team leadership or a position.
+    </p>
+    <ul class="contact-links">
+      <li>
+        <a href={profile.linkedin}>LinkedIn<span class="visually-hidden">: {profile.name}</span></a>
+      </li>
+      <li>
+        <a href={profile.github}>GitHub<span class="visually-hidden">: {profile.name}</span></a>
+      </li>
+    </ul>
+    <p class="copyright">
+      © {year} {profile.name} · Built with Astro · Deployed to Cloudflare
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: clamp(2.5rem, 6vw, 4rem) 2rem;
+    background: var(--bg-subtle);
+  }
+
+  .contact-intro {
+    color: var(--text-muted);
+    max-width: 55ch;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+  }
+
+  .copyright {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+</style>

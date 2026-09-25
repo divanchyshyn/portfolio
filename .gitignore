@@ -1,0 +1,11 @@
+# Build output and caches
+dist/
+.astro/
+.wrangler/
+
+# Dependencies
+node_modules/
+
+# Environment files — secrets never enter the repository
+.env
+.env.*

@@ -1,0 +1,51 @@
+---
+import { skills } from '../data/cv';
+---
+
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-intro">The toolbox behind the roles above — grouped the way I reach for it.</p>
+    <div class="skills-grid">
+      {skills.map((group) => (
+        <div class="skill-group">
+          <h3>{group.title}</h3>
+          <ul class="skill-items">
+            {group.items.map((item) => (
+              <li class="chip">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-group {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>
