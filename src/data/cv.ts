@@ -8,7 +8,7 @@ export interface Profile {
   location: string;
   linkedin: string;
   github: string;
-  /** First role in the employment history, as `YYYY-MM` — drives yearsOfExperience(). */
+  /** First role in the employment history, as `YYYY-MM`; drives yearsOfExperience(). */
   careerStart: string;
   /** Short text used for the meta description and the About section teaser. */
   description: string;
@@ -61,9 +61,9 @@ export const profile: Profile = {
   github: 'https://github.com/divanchyshyn',
   careerStart: '2013-11',
   description:
-    'Dmytro Ivanchyshyn — Senior .NET Software Engineer / Tech Lead in Oslo, Norway. 13 years across .NET, Azure, Kubernetes and event-driven architecture, now building cloud platforms for smart-home security.',
+    'Dmytro Ivanchyshyn, Senior .NET Software Engineer / Tech Lead in Oslo, Norway. 13 years across .NET, Azure, Kubernetes and event-driven architecture, now building cloud platforms for smart-home security.',
   summary:
-    'I am a .NET engineer with 13 years behind cloud-native platforms — from event-driven microservices in finance and energy trading to smart-home security at European scale. I care about clear service boundaries, event-driven architecture and teams that ship with confidence: strong testing strategies, real observability and honest code reviews. Currently at Sector Alarm in Oslo, building cloud services on a fully Azure stack with Kubernetes — and weaving agentic AI into the everyday engineering loop with Claude Code and LLM-assisted workflows. Before that I led the Flex Optimization Team at Eneco in Rotterdam, delivering the optimisation services behind a Virtual Power Plant.',
+    'I am a .NET engineer with 13 years behind cloud-native platforms, from event-driven microservices in finance and energy trading to smart-home security at European scale. I care about clear service boundaries, event-driven architecture and teams that ship with confidence: strong testing strategies, real observability and honest code reviews. Currently at Sector Alarm in Oslo, building cloud services on a fully Azure stack with Kubernetes, and weaving agentic AI into the everyday engineering loop with Claude Code and LLM-assisted workflows. Before that I led the Flex Optimization Team at Eneco in Rotterdam, delivering the optimisation services behind a Virtual Power Plant.',
 };
 
 export const experience: Experience[] = [
@@ -73,10 +73,10 @@ export const experience: Experience[] = [
     role: 'Senior .NET Software Engineer',
     start: '2026-05',
     summary:
-      'Building cloud-native backend services for one of Europe\u2019s leading safety providers — Sector Alarm protects more than 730,000 homes and businesses across Europe with smart alarms, cameras and locks, backed by a 24/7 Alarm Receiving Centre.',
+      'Building cloud-native backend services for one of Europe\u2019s leading safety providers. Sector Alarm protects more than 730,000 homes and businesses across Europe with smart alarms, cameras and locks, backed by a 24/7 Alarm Receiving Centre.',
     highlights: [
       'Building cloud-native .NET services on a fully Azure stack, deployed on Azure Kubernetes Service.',
-      'Bringing agentic AI into everyday engineering — Claude Code\u2013assisted development, AI pipelines and modern tooling woven into how the team ships.',
+      'Bringing agentic AI into everyday engineering: Claude Code-assisted development, AI pipelines and modern tooling woven into how the team ships.',
       'Working on the platform that connects security devices, the award-winning Sector Alarm app and the 24/7 Alarm Receiving Centre.',
     ],
     tech: [
@@ -94,7 +94,7 @@ export const experience: Experience[] = [
     highlights: [
       'Defined service boundaries, multi-tenant data architecture and integration patterns; authored Architecture Decision Records and aligned choices with other VPP domains.',
       'Designed multi-tenancy with isolated data stores, enabling tenant isolation, simpler compliance and independent scaling of tenant workloads.',
-      'Delivered the battery co-location feature pairing batteries with wind and solar to share grid connections — reducing grid infrastructure CAPEX by ~30–50%.',
+      'Delivered the battery co-location feature pairing batteries with wind and solar to share grid connections, reducing grid infrastructure CAPEX by ~30–50%.',
       'Migrated the Flex Optimization Service from MassTransit to Wolverine, removing future licensing exposure (~€12k/year) and simplifying the messaging stack.',
       'Upgraded the platform from .NET 8 to .NET 10, improving performance, security and long-term maintainability.',
       'Hired, coached and mentored developers; ran technical interviews and planned delivery of business-critical features.',
@@ -125,9 +125,9 @@ export const experience: Experience[] = [
       'TIBCO Cloud API Management', 'SonarQube', 'GitLab',
     ],
   },
-{
-    company: 'CarNext',
-    companyUrl: 'https://corporate.carnext.com/',
+  {
+    company: 'CarNext (BCA Group)',
+    companyUrl: 'https://www.bca.com/',
     role: 'Tech Lead / Senior .NET Software Engineer',
     start: '2020-02',
     end: '2022-12',
@@ -145,8 +145,8 @@ export const experience: Experience[] = [
     ],
   },
   {
-    company: 'Virtual Affairs',
-    companyUrl: 'https://www.virtual-affairs.com/en',
+    company: 'Virtual Affairs (iO Digital)',
+    companyUrl: 'https://www.iodigital.com/',
     role: '.NET Software Engineer / Sitecore Developer',
     start: '2018-10',
     end: '2020-01',
@@ -253,7 +253,7 @@ export const projects: Project[] = [
   {
     name: 'Learn and play',
     description:
-      'A collection of small reading, counting and maths games for children in Norwegian. React + Vite, fully static, deployed to Cloudflare Workers behind a human-approved pipeline — the same deployment strategy this site uses.',
+      'A collection of small reading, counting and maths games for children in Norwegian. React + Vite, fully static, deployed to Cloudflare Workers behind a human-approved pipeline, the same strategy this site uses.',
     url: 'https://play2learn.divanchyshyn.com/',
     sourceUrl: 'https://github.com/divanchyshyn/learn-and-play',
     tech: ['React 19', 'Vite', 'Vitest', 'Cloudflare Workers', 'GitHub Pages'],
@@ -261,7 +261,7 @@ export const projects: Project[] = [
   {
     name: 'This website',
     description:
-      'A zero-JS Astro site with a dark-first design, typed CV data, automated GitHub Pages deploys and a human-approved Cloudflare deploy to divanchyshyn.com — with Lighthouse budgets, ESLint, astro check and Vitest as quality gates.',
+      'A zero-JS Astro site with a dark-first design, typed CV data, automated GitHub Pages deploys and a human-approved Cloudflare deploy to divanchyshyn.com, with Lighthouse budgets, ESLint, astro check and Vitest as quality gates.',
     url: 'https://divanchyshyn.com/',
     sourceUrl: 'https://github.com/divanchyshyn/portfolio',
     tech: ['Astro', 'TypeScript', 'Vitest', 'Cloudflare Workers', 'GitHub Pages'],
